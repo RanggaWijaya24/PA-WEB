@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="crud.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="icon" href="img/CUYLOGO-removebg-preview.ico">
+    <title>CRUD Cuy THrift Store</title>
+</head>
+<body>
+    <div class="table">
+        <div class="table-header">
+            <p>Product Details</p>
+            <div>
+                <input placeholder="Product">
+                <button class="tambah"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+                <button class="tambah"> <a href="tambah.html">Tambah</a></button>
+               
+            </div>
+        </div>
+        <div class="table-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Product</th>
+                        <th>Gambar Product</th>
+                        <th>Harga</th>
+                        <th>Size</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Sepatu Adidas</td>
+                        <td><img src="img/crud/adidas.jpg" alt=""></td>
+                        <td>Rp400.000</td>
+                        <td>45</td>
+                        <td>
+                            <button><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jersey Lakers</td>
+                        <td><img src="img/crud/kobe.jpeg" alt=""></td>
+                        <td>Rp800.000</td>
+                        <td>L</td>
+                        <td>
+                            <button> <a href="edit.html"><i class="fa-solid fa-pen-to-square"></i></a></button>
+                            <button><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+            <div><i class="fa-solid fa-arrow-left-long"></i></div>
+            <div>1</div>
+            <div>2</div>
+            <div><i class="fa-solid fa-arrow-right-long"></i></div>
+        </div>
+    </div>
+</body>
+</html>
