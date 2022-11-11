@@ -91,7 +91,7 @@
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $ts["Nama_Produk"]; ?></td>
-                                <td><img src="../img/crud/<?php echo $ts['Gambar'];?> "></td>;
+                                <td><img src="../img/crud/<?php echo $ts['Gambar'];?> "></td>
                                 <td>Rp. <?php echo $ts["Harga"]; ?></td>
                                 <td><?php echo $ts["Sisa_Stok"]; ?></td>
                                 <td>
