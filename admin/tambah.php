@@ -19,7 +19,8 @@
           $nama_gambar_baru = "$waktu-$gambar";
           $tmp = $_FILES['gambar_produk']['tmp_name'];
           //Mengecek jenis ekstensi apakah sudah sesuai
-          if(in_array($ekstensi, $jenis_file) === true && move_uploaded_file($tmp,'../img/crud'.$nama_gambar_baru)){
+          if(in_array($ekstensi, $jenis_file) === true){
+            move_uploaded_file($tmp,'../img/crud'.$nama_gambar_baru);
             $sql = "INSERT INTO produk VALUES('','$nama', '$nama_gambar_baru', '$harga', '$stok')";
             $result = mysqli_query($conn, $sql);
             if ($result){
