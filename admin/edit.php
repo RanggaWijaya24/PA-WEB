@@ -26,19 +26,16 @@
           //Memulai Proses penghapusan File Gambar Yang Lama
           $nama_foto = "SELECT Gambar FROM produk WHERE Id_Produk = '$id'";
           $data_gambar = mysqli_query($conn, $nama_foto);
-
           //Menyimpan data gambar ke dalam bentuk array yang berisikan 'name', 'type', 'size' dll.
           $gambar_lama = mysqli_fetch_array($data_gambar);
           //Menghapus file didalam Penyimpanan atau direktori
-          if(is_file("../img/crud/".$nama_foto)){
-            unlink("../img/crud/".$gambar_lama['Gambar']);
-            unlink("../img/crud/".$nama_foto);
-          }
+          unlink("../img/crud/".$gambar_lama['Gambar']);
+
           //Setelah itu Masukkan File Gambar yang Baru
           move_uploaded_file($tmp, '../img/crud/'.$nama_gambar_baru);
           
           //Setelah File Terupdate, Database Juga Di Update
-          $update = mysqli_query($conn, "UPDATE produk SET Nama_Produk = '$nama', Gambar = '$nama_gambar_baru', Harga = '$harga', Sisa_Stok = '$stok', Tanggal = '$waktu'");
+          $update = mysqli_query($conn, "UPDATE produk SET Nama_Produk = '$nama', Gambar = '$nama_gambar_baru', Harga = '$harga', Sisa_Stok = '$stok', Tanggal = '$waktu' WHERE Id_Produk = $id");
           if($update){
             header("Location: admin.php?pesan=berhasil");
           }else{
