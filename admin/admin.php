@@ -70,7 +70,8 @@
                         <th>Gambar Produk</th>
                         <th>Harga Produk</th>
                         <th>Jumlah Stok</th>
-                        <th>Action</th>
+                        <th>Tanggal Update</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <?php 
@@ -91,9 +92,10 @@
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $ts["Nama_Produk"]; ?></td>
-                                <td><img src="../img/crud/<?php echo $ts['Gambar'];?> "></td>
+                                <td><img src="../img/crud/<?php echo $ts['Gambar'];?>"></td>
                                 <td>Rp. <?php echo $ts["Harga"]; ?></td>
                                 <td><?php echo $ts["Sisa_Stok"]; ?></td>
+                                <td><?php echo $ts["Tanggal"]; ?></td>
                                 <td>
                                     <button><a href="edit.php?id=<?php echo $ts["Id_Produk"]; ?>"><i class="fa-solid fa-pen-to-square"></a></i></button>
                                     <button><a href="hapus.php?id=<?php echo $ts["Id_Produk"]; ?>"><i class="fa-solid fa-trash"></a></i></button>

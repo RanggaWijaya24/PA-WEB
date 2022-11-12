@@ -7,46 +7,45 @@
           $nama = $_POST["nama_produk"];
           $harga = $_POST["harga"];
           $stok = $_POST["stok"];
-          $gambar = $_FILES['gambar_produk']['name'];
-          // Mengecek apakah ukuran file tidak lebih dari 4mb
+          $gambar = $_FILES["gambar_produk"]["name"];
           $jenis_file = array('png','jpg','jpeg');
-          $memisahkan_ekstensi = explode('.',$gambar);
+          $memisahkan_ekstensi = explode('.', $gambar);
           $ekstensi = strtolower(end($memisahkan_ekstensi));
           //set zona waktu
           date_default_timezone_set("Asia/Makassar");
           //Membuat nama file baru menggunakan waktu upload dan nama file aslinya
           $waktu = date("Y-m-d H:i:s");
-          $nama_gambar_baru = "$waktu-$gambar";
+          $enkripsi = md5($waktu);
+          $nama_gambar_baru = "$enkripsi-$gambar";
           $tmp = $_FILES['gambar_produk']['tmp_name'];
           //Mengecek jenis ekstensi apakah sudah sesuai
           if(in_array($ekstensi, $jenis_file) === true){
-            move_uploaded_file($tmp,'../img/crud'.$nama_gambar_baru);
-            $sql = "INSERT INTO produk VALUES('','$nama', '$nama_gambar_baru', '$harga', '$stok')";
-            $result = mysqli_query($conn, $sql);
-            if ($result){
-                echo "
-                    <script>
-                        alert('Produk Berhasil Ditambahkan');
-                    </script>
-                ";
-                header("Location: admin.php");
-            }else{
-                echo "
-                    <script>
-                        alert('Produk Gagal Ditambahkan');
-                        document.location.href = 'crud.php';
-                    </script>
-                ";
-                header("Location: admin.php");
+            if(move_uploaded_file($tmp,'../img/crud/'.$nama_gambar_baru)){
+              $tambah = mysqli_query($conn, "INSERT INTO produk VALUES('','$nama', '$nama_gambar_baru', '$harga', '$stok', '$waktu')");
+              if ($tambah){
+                  echo "
+                      <script>
+                          alert('Produk Berhasil Ditambahkan');
+                          document.location.href = 'admin.php'
+                      </script>
+                  ";
+              }else{
+                  echo "
+                      <script>
+                          alert('Produk Gagal Ditambahkan');
+                          document.location.href = 'admin.php';
+                      </script>
+                  ";
+              }
             }
             //Jika ekstensinya salah
           }else{
             echo "
               <script>
                   alert('File yang di Upload Bukan Gambar!!!');
+                  document.location.href = 'admin.php';
               </script>
             ";
-            header("Location: admin.php");
           }
         
         }else{
@@ -84,11 +83,11 @@
           </div>
         <div>
           <label>Harga </label>
-         <input type="text" name="harga" required=""value="" required/>
+         <input type="text" name="harga" value="" required/>
         </div>
         <div>
           <label>Stok</label>
-         <input type="text" name="stok" required="" value="" required/>
+         <input type="text" name="stok" value="" required/>
         </div>
        
         <div>
