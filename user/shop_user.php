@@ -3,7 +3,7 @@
     require '../koneksi.php';
     if(isset($_SESSION['login'])){
       if($_SESSION['Role'] === "user"){
-        //Langsung Masuk Ke Halaman Html dibawah
+        $data = mysqli_query($conn, "SELECT * FROM produk ORDER BY Id_Produk ASC");
       }else{
         header("Location: ../admin/index_admin.php");
       }

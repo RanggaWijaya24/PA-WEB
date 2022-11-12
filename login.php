@@ -19,6 +19,7 @@
       if(password_verify($password, $row['Password'])){
         $_SESSION['login'] = $row["Username"];
         $_SESSION['Role'] = $row["Role"];
+        $_SESSION['id_akun'] = $row["Id_Akun"];
         if($_SESSION['Role'] === "admin"){
           header("Location: admin/index_admin.php");
         }else{

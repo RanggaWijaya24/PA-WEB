@@ -3,7 +3,14 @@
     require '../koneksi.php';
     if(isset($_SESSION['login'])){
       if($_SESSION['Role'] === "user"){
-        //Langsung Masuk Ke Halaman Html dibawah
+        $id_akun = $_SESSION['id_akun'];
+        //Query $data berfungsi untuk mengambil data dari TABEL CART dimana 2 kondisi Harus terpenuhi
+        //Kondisi 1 ketika Id_produk dari tabel CART == Id_produk dari tabel PRODUK
+        //Kondisi 1 menggunakan INNER JOIN karena kolom Nama Gambar akan diambil dari tabel PRODUK
+        //Kondisi 2 ketika id_akun dari SESSION == id_akun dari tabel CART
+        $data = mysqli_query($conn, "SELECT * FROM cart INNER JOIN produk ON cart.Id_Produk = produk.Id_Produk WHERE Id_Akun = $id_akun");
+        //Query $total_beli untuk mengambil Jumlah Harga yang harus dibayar oleh akun
+        $total_beli = mysqli_query($conn, "SELECT SUM(Total_Harga) AS Total FROM cart WHERE Id_Akun = $id_akun");
       }else{
         header("Location: ../admin/index_admin.php");
       }
@@ -42,16 +49,16 @@
         </div>
         <div id="mobile">
             <img src="../img/menu.png" alt="" class="bar" width="25px" height="25px">
-            <a href="#" ><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="cart_user.php" ><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </section>
 
 
     <section id="page-header" class="about-header">
         
-        <h2>Ayo Curhat</h2>
+        <h2>KERANJANG</h2>
         
-        <p>Saran dan Pesan Terbaik Anda</p>
+        <p>Tingkatkan Belanja dengan Produk Berkualitas Kami dan dapatkan Diskon Hingga 50%</p>
        
     </section>
 
@@ -59,39 +66,43 @@
         <table width="100%">
             <thead>
                 <tr>
-                    <td>Remove</td>
-                    <td>Image</td>
-                    <td>Product</td>
-                    <td>Price</td>
+                    <td>Hapus</td>
+                    <td>No</td>
+                    <td>Gambar Produk</td>
+                    <td>Nama Produk</td>
+                    <td>Harga Produk</td>
                     <td>Quantity</td>
                     <td>Subtotal</td>
                 </tr>
             </thead>
+            <?php 
+                $cek = mysqli_num_rows($data);
+                if($cek == "0"){
+                    echo "
+                    <tr>
+                        <td colspan='7' style='text-align:center;'>Barang Belanja Belum Ada</td>
+                    </tr>";
+                }
+            ?>
             <tbody>
+                <?php 
+                    include '../koneksi.php';
+                    $no = 1;
+                    while($ts = mysqli_fetch_array($data)){
+                ?>
                 <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="../img/products/f1.jpg" alt=""></td>
-                    <td>Cartoon T-shirt</td>
-                    <td>Rp.130.000</td>
-                    <td><input type="number" value="1"></td>
-                    <td>Rp.130.000</td>
+                    <td><a href="hapus.php?id=<?php echo $ts["Id_Produk"]; ?>"><i class="far fa-times-circle"></i></a></td>
+                    <td><?php echo $no; ?></td>
+                    <td><img src="../img/crud/<?php echo $ts['Gambar'];?>"></td>
+                    <td><?php echo $ts["Nama_Produk"];?></td>
+                    <td>Rp. <?php echo number_format($ts["Harga"],0 ,",",".") ?></td>
+                    <td><?php echo $ts["Quantity"];?></td>
+                    <td>Rp. <?php echo number_format($ts["Total_Harga"],0 ,",",".") ?></td>
                 </tr>
-                <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="../img/products/f2.jpg" alt=""></td>
-                    <td>Cartoon T-shirt</td>
-                    <td>Rp.130.000</td>
-                    <td><input type="number" value="1"></td>
-                    <td>Rp.130.000</td>
-                </tr>
-                <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="../img/products/f3.jpg" alt=""></td>
-                    <td>Cartoon T-shirt</td>
-                    <td>Rp.130.000</td>
-                    <td><input type="number" value="1"></td>
-                    <td>Rp.130.000</td>
-                </tr>
+            <?php
+                $no++;
+                }
+            ?>
             </tbody>
         </table>
     </section>
@@ -106,19 +117,12 @@
         </div>
 
         <div id="subtotal">
-            <h3>Cart Totals</h3>
+            <h3>Total Belanja</h3>
             <table>
                 <tr>
-                    <td>Cart Subtotals</td>
-                    <td>Rp.360.000</td>
-                </tr>
-                <tr>
-                    <td>Shipping</td>
-                    <td>Free</td>
-                </tr>
-                <tr>
                     <td><strong>Total</strong></td>
-                    <td><strong>Rp.360.000</strong></td>
+                    <?php $jumlah = mysqli_fetch_array($total_beli) ?>
+                    <td><strong>Rp. <?php echo number_format($jumlah['Total'],0 ,",",".") ?></strong></td>
                 </tr>
             </table>
             <button class="normal">Proses Untuk Checkout</button>

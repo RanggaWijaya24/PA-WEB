@@ -83,31 +83,27 @@
    </section>
 
    <section id="features" class="section-p1">
-    <div class="fe-box">
-        <img src="../img/features/f1.png" alt="">
-        <h6>Mudah di akses</h6>
-    </div>
-    <div class="fe-box">
-        <img src="../img/features/f2.png" alt="">
-        <h6>Hemat waktu</h6>
-    </div>
-    <div class="fe-box">
-        <img src="../img/features/f3.png" alt="">
-        <h6>Hemat Uang</h6>
-    </div>
-    <div class="fe-box">
-        <img src="../img/features/f4.png" alt="">
-        <h6>Customer senang</h6>
-    </div>
-    <div class="fe-box">
-        <img src="../img/features/f5.png" alt="">
-        <h6>Admin senang</h6>
-    </div>
-    <div class="fe-box">
-        <img src="../img/features/f6.png" alt="">
-        <h6>24/7 Support</h6>
-    </div>
-</section>
+        <div class="fe-box">
+            <img src="../img/features/f1.png" alt="">
+            <h6>Mudah di akses</h6>
+        </div>
+        <div class="fe-box">
+            <img src="../img/features/f2.png" alt="">
+            <h6>Hemat waktu</h6>
+        </div>
+        <div class="fe-box">
+            <img src="../img/features/f4.png" alt="">
+            <h6>Customer senang</h6>
+        </div>
+        <div class="fe-box">
+            <img src="../img/features/f5.png" alt="">
+            <h6>Admin senang</h6>
+        </div>
+        <div class="fe-box">
+            <img src="../img/features/f6.png" alt="">
+            <h6>24/7 Support</h6>
+        </div>
+    </section>
 
 
 
