@@ -3,7 +3,7 @@
     require '../koneksi.php';
     if(isset($_SESSION['login'])){
       if($_SESSION['Role'] === "admin"){
-        //Langsung Masuk Ke Halaman Html dibawah
+        $data = mysqli_query($conn, "SELECT * FROM produk ORDER BY Id_Produk ASC");
       }else{
         header("Location: ../user/index_user.php");
       }
@@ -54,257 +54,44 @@
 
 
    <section id="product1" class="section-p1">
-        <h2>Featured Product</h2>
-        <p>Lagi trend baju modern</p>
+        <h2>Produk Kami</h2>
+        <?php 
+            $cek = mysqli_num_rows($data);
+            if($cek == "0"){
+                echo "
+                <center>
+                <p>Belum Ada Produk Yang Dijual Saat Ini</p>
+                </center>
+                ";
+            }
+        ?>
         <div class="pro-container">
-            <div class="pro" onclick="window.location.href='sproduct.php';">
-                <img src="../img/products/f1.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-            <div class="pro" onclick="window.location.href='sproduct.php';">
-                <img src="../img/products/f2.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-            <div class="pro" onclick="window.location.href='sproduct.php';">
-                <img src="../img/products/f3.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-            <div class="pro" onclick="window.location.href='sproduct.php';">
-                <img src="../img/products/f4.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-            <div class="pro" onclick="window.location.href='sproduct2.php';" >
-                <img src="../img/products/f5.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-            <div class="pro" onclick="window.location.href='sproduct2.php';">
-                <img src="../img/products/f6.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-            <div class="pro"onclick="window.location.href='sproduct2.php';">
-                <img src="../img/products/f7.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-            <div class="pro"onclick="window.location.href='sproduct2.php';">
-                <img src="../img/products/f8.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-       
-        <div class="pro" onclick="window.location.href='sproduct3.php';">
-            <img src="../img/products/n1.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-        <div class="pro"onclick="window.location.href='sproduct3.php';">
-            <img src="../img/products/n2.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-        <div class="pro"onclick="window.location.href='sproduct3.php';">
-            <img src="../img/products/n3.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-        <div class="pro" onclick="window.location.href='sproduct3.php';">
-            <img src="../img/products/n4.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-        <div class="pro" onclick="window.location.href='sproduct4.php';">
-            <img src="../img/products/n5.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-        <div class="pro" onclick="window.location.href='sproduct4.php';">
-            <img src="../img/products/n6.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-        <div class="pro"onclick="window.location.href='sproduct4.php';">
-            <img src="../img/products/n7.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-        <div class="pro" onclick="window.location.href='sproduct4.php';">
-            <img src="../img/products/n8.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-    </div>
-   </section>
+            <?php
+                include '../koneksi.php';
+                $no = 1;
+                while($ts = mysqli_fetch_array($data)){
+            ?>
 
-   <section id="pagination" class="section-p1">
-    <a href="#">1</a>
-    <a href="#">2</a>
-    <a href="#"><i class="fa-solid fa-arrow-right"></i> </a>
+            <div class="pro" onclick="window.location.href='';">
+                <img src="../img/crud/<?php echo $ts['Gambar'];?>">
+                <div class="des">
+                    <span>Stok Tersedia : <?php echo $ts["Sisa_Stok"]; ?></span>
+                    <h5><?php echo $ts["Nama_Produk"]; ?></h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>Rp. <?php echo number_format($ts["Harga"],0 ,",",".") ?></h4>
+                </div>
+                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
+            </div>
+            <?php
+                $no++;
+                }
+            ?>
+        </div>
    </section>
 
    <!-- <section id="sm-banner" class="section-p1">
@@ -324,15 +111,6 @@
   
 
    <section id="newsletter" class="section-p1 section-m1">
-        <div class="news">
-            <h4>Sign Up untuk Info lebih lanjut</h4>
-            <p>Masukan email anda agar dapat info dan update mengenai <span>barang terbaru</span> </p>
-        </div>
-
-        <div class="form">
-            <input type="text"placeholder="Your E-Mail" name="" id="">
-            <button class="normal">Sign Up</button>
-        </div>
    </section>
 
 

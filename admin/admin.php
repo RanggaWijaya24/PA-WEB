@@ -3,10 +3,6 @@
     require '../koneksi.php';
     if(isset($_SESSION['login'])){
       if($_SESSION['Role'] === "admin"){
-        $result = mysqli_query($conn, "SELECT * FROM produk");
-        while ($row = mysqli_fetch_assoc($result)) {
-            $produk[] = $row;
-        }
         if (isset($_POST['cari'])) {
             $cari = $_POST['keyword'];
             $data = mysqli_query($conn, "SELECT * FROM produk WHERE Nama_Produk LIKE '%$cari%' OR Gambar LIKE '%$cari%' OR Harga LIKE '%$cari%' OR Sisa_Stok LIKE '%$cari%'");
@@ -88,12 +84,12 @@
                         include '../koneksi.php';
                         $no = 1;
                         while($ts = mysqli_fetch_array($data)){
-                            ?>
+                    ?>
                             <tr>
                                 <td><?php echo $no; ?></td>
                                 <td><?php echo $ts["Nama_Produk"]; ?></td>
                                 <td><img src="../img/crud/<?php echo $ts['Gambar'];?>"></td>
-                                <td>Rp. <?php echo $ts["Harga"]; ?></td>
+                                <td>Rp. <?php echo number_format($ts["Harga"],0 ,",",".") ?></td>
                                 <td><?php echo $ts["Sisa_Stok"]; ?></td>
                                 <td><?php echo $ts["Tanggal"]; ?></td>
                                 <td>
