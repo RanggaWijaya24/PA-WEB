@@ -3,7 +3,49 @@
     require '../koneksi.php';
     if(isset($_SESSION['login'])){
       if($_SESSION['Role'] === "user"){
-        $data = mysqli_query($conn, "SELECT * FROM produk ORDER BY Id_Produk ASC");
+        $id = $_GET["id"];
+        $id_akun = $_SESSION['id_akun'];
+        $data = mysqli_query($conn,"SELECT * FROM produk LEFT JOIN cart ON produk.Id_Produk = cart.Id_Produk WHERE produk.Id_Produk = $id");
+        //Memeriksa Stok
+        $data_tambah = mysqli_fetch_array($data);
+        if($data_tambah["Sisa_Stok"] === 0){
+            echo"
+                <script>
+                    alert('Stok Produk Sedang Kosong');
+                    document.location.href = 'shop_user.php'
+                </script>
+            ";
+        }else{
+            if(isset($_POST['tambah_cart'])){
+
+                $quantity = $_POST["quantity"];
+                if($data_tambah["Id_Produk"] === NULL){
+                    $total_harga = $data_tambah["Harga"] * $quantity;
+                    $tambah = mysqli_query($conn, "INSERT INTO cart VALUES($id_akun,$id,$quantity,$total_harga)");
+                    $stok_terbaru = $data_tambah["Sisa_Stok"] - $quantity;
+                    $update_stok = mysqli_query($conn, "UPDATE produk SET Sisa_Stok = $stok_terbaru WHERE Id_Produk = $id");
+                }else{
+                    $tambah = mysqli_query($conn, "UPDATE cart SET Quantity = $quantity");
+                    $stok_terbaru = $data_tambah["Sisa_Stok"] + $data_tambah["Quantity"] - $quantity;
+                    $update_stok = mysqli_query($conn, "UPDATE produk SET Sisa_Stok = $stok_terbaru WHERE Id_Produk = $id");
+                }
+                if ($tambah && $update_stok){
+                    echo "
+                        <script>
+                            alert('Produk Berhasil Ditambahkan Ke Keranjang');
+                            document.location.href = 'cart_user.php'
+                        </script>
+                    ";
+                }else{
+                    echo "
+                        <script>
+                            alert('Produk Gagal Ditambahkan');
+                            document.location.href = 'shop_user.php';
+                        </script>
+                    ";
+                }
+            }
+        }
       }else{
         header("Location: ../admin/index_admin.php");
       }
@@ -17,7 +59,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuy Thrift Store</title>
+    <title>Thrift Store</title>
     <link rel="stylesheet" href="../fontawesome/css/all.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../img/CUYLOGO-removebg-preview.ico">
@@ -45,58 +87,21 @@
         </div>
     </section>
 
-
-    <section id="page-header">
-        
-        <h2>#stayfashion</h2>
-        
-        <p>Selalu kunjungi web kami karena akan ada info terbaru</p>
-       
+    <section id="prodetails" class="section-p1"> 
+        <div class="single-pro-image">
+            <img src="../img/crud/<?php echo $data_tambah["Gambar"]; ?>" width="100%" id="MainImg" alt="">
+        </div>
+              
+        <div class="single-pro-details">
+            <h4><?php echo $data_tambah["Nama_Produk"];?></h4>
+            <h2>Rp. <?php echo number_format($data_tambah["Harga"],0 ,",",".") ?></h2>
+            <form action="" method="post">
+                <input type="number" name="quantity" value="" min="1" max=<?php echo $data_tambah["Sisa_Stok"]?> required>
+                <button class="normal" name="tambah_cart">Add To Cart</button>
+            </form>
+        </div>
     </section>
 
-
-
-   <section id="product1" class="section-p1">
-        <h2>Produk Kami</h2>
-        <div class="pro-container">
-            <?php 
-                $cek = mysqli_num_rows($data);
-                if($cek == "0"){
-                    echo "
-                    <center>
-                    <p>Belum Ada Produk Yang Dijual Saat Ini</p>
-                    </center>
-                    ";
-                }
-            ?>
-            <div class="pro-container">
-                <?php
-                    include '../koneksi.php';
-                    $no = 1;
-                    while($ts = mysqli_fetch_array($data)){
-                ?>
-
-                <div class="pro" onclick="window.location.href='tambah.php?id=<?php echo $ts['Id_Produk']; ?>';">
-                    <img src="../img/crud/<?php echo $ts['Gambar'];?>">
-                    <div class="des">
-                        <span>Stok Tersedia : <?php echo $ts["Sisa_Stok"]; ?></span>
-                        <h5><?php echo $ts["Nama_Produk"]; ?></h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>Rp. <?php echo number_format($ts["Harga"],0 ,",",".") ?></h4>
-                    </div>
-                    <a href="tambah.php?id=<?php echo $ts['Id_Produk']; ?>"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-                </div>
-                <?php
-                    $no++;
-                    }
-                ?>
-        </div>
-   </section>
 
    <!-- <section id="sm-banner" class="section-p1">
       <div class="banner-box">
@@ -172,7 +177,26 @@
 
    </footer>
 
+<!-- JS untuk bisa pindah-pindah click baju -->
+   <script>
+     var MainImg  = document.getElementById("MainImg");
+     var smallimg = document.getElementsByClassName("small-img");
+
+     smallimg[0].onclick = function(){
+        MainImg.src = smallimg[0].src;
+     }
+     smallimg[1].onclick = function(){
+        MainImg.src = smallimg[1].src;
+     }
+     smallimg[2].onclick = function(){
+        MainImg.src = smallimg[2].src;
+     }
+     smallimg[3].onclick = function(){
+        MainImg.src = smallimg[3].src;
+     }
+   </script>
+
 
     <script src="../js/script.js"></script>
 </body>
-</html>
+    </html>
