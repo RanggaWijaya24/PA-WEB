@@ -3,13 +3,14 @@
     require '../koneksi.php';
     if(isset($_SESSION['login'])){
       if($_SESSION['Role'] === "user"){
-        header("Location: ../user/index_user.php");
+        //Langsung Masuk Ke Halaman Html dibawah
       }else{
         header("Location: ../admin/index_admin.php");
       }
+    }else{
+      header("Location: ../umum/index.php");
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,18 +29,19 @@
         <div>
             <ul id="navbar">
                <div class="navigation">
-                <li><a href="index.php">Home</a></li>
-                <li><a class="active" href="shop.php">Shop</a></li>
-                <li><a href="blog.php">Blog</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li id="kontak" onclick="myFunction()"><a href="../login.php"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="index_user.php">Home</a></li>
+                <li><a class="active" href="shop_user.php">Shop</a></li>
+                <li><a href="blog_user.php">Blog</a></li>
+                <li><a href="about_user.php">About</a></li>
+                <li><a href="contact_user.php">Contact</a></li>
+                <li id="bg-lg"><a href="cart_user.php"><i class="fa-solid fa-cart-shopping"></i></a></li> 
+                <li id="bg-lg"><a href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li> 
                </div>
             </ul>
         </div>
         <div id="mobile">
             <img src="../img/menu.png" alt="" class="bar" width="25px" height="25px">
-            <a href="../login.php" ><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="#" ><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </section>
 

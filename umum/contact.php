@@ -7,6 +7,29 @@
       }else{
         header("Location: ../admin/index_admin.php");
       }
+    }else{
+        if(isset($_POST['kirim'])){
+            $nama = $_POST["nama"];
+            $email = $_POST["email"];
+            $subjek = $_POST["subjek"];
+            $pesan = $_POST["pesan"];
+            $tambah = mysqli_query($conn, "INSERT INTO contact VALUES(NULL,'$nama','$email','$subjek','$pesan')");
+            if($tambah){
+                echo "
+                    <script>
+                        alert('Pesan Telah Disimpan');
+                        document.location.href = 'contact.php'
+                    </script>
+                ";
+            }else{
+                echo "
+                    <script>
+                        alert('Pesan Gagal Disimpan');
+                        document.location.href = 'contact.php'
+                    </script>
+                ";
+            }
+        }
     }
 ?>
 
@@ -84,15 +107,15 @@
     </section>
 
     <section id="form-details">
-        <form action="">
+        <form action="" method="post">
             <span>LEAVE A MESSAGE</span>
             <h2>Saran dan Kritik adalah kunci untuk menjadi lebih baik</h2>
-            <input type="text" placeholder="Your Name">
-            <input type="text" placeholder="E-Mail">
-            <input type="text" placeholder="Subject">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message">
+            <input type="text" name="nama" placeholder="Your Name">
+            <input type="text" name="email" placeholder="E-Mail">
+            <input type="text" name="subjek" placeholder="Subject">
+            <textarea name="pesan" id="" cols="30" rows="10" placeholder="Your Message">
             </textarea>
-            <button class="normal">Submit</button>
+            <button class="normal" name="kirim">Submit</button>
         </form>
 
         <div class="people">

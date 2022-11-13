@@ -21,13 +21,13 @@
                 $quantity = $_POST["quantity"];
                 if($data_tambah["Id_Produk"] === NULL){
                     $total_harga = $data_tambah["Harga"] * $quantity;
-                    $tambah = mysqli_query($conn, "INSERT INTO cart VALUES($id_akun,$id,$quantity,$total_harga)");
+                    $tambah = mysqli_query($conn, "INSERT INTO cart VALUES('$id_akun','$id','$quantity','$total_harga')");
                     $stok_terbaru = $data_tambah["Sisa_Stok"] - $quantity;
-                    $update_stok = mysqli_query($conn, "UPDATE produk SET Sisa_Stok = $stok_terbaru WHERE Id_Produk = $id");
+                    $update_stok = mysqli_query($conn, "UPDATE produk SET Sisa_Stok = '$stok_terbaru' WHERE Id_Produk = $id");
                 }else{
-                    $tambah = mysqli_query($conn, "UPDATE cart SET Quantity = $quantity");
+                    $tambah = mysqli_query($conn, "UPDATE cart SET Quantity = '$quantity'");
                     $stok_terbaru = $data_tambah["Sisa_Stok"] + $data_tambah["Quantity"] - $quantity;
-                    $update_stok = mysqli_query($conn, "UPDATE produk SET Sisa_Stok = $stok_terbaru WHERE Id_Produk = $id");
+                    $update_stok = mysqli_query($conn, "UPDATE produk SET Sisa_Stok = '$stok_terbaru' WHERE Id_Produk = '$id'");
                 }
                 if ($tambah && $update_stok){
                     echo "

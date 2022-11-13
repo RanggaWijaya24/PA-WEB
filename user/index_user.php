@@ -83,7 +83,7 @@
    <section id="banner" class="section-m1">
     <h4>Memberikan service terbaik</h4>
     <h2>Diskon <span>50% cuy</span> Semua Baju & Aksesoris di musim panas </h2>
-    <button onclick="window.location.href='shop_user.php';" class="normal">Explore More</button>
+    <button onclick="window.location.href='shop_user.php';" class="normal">Lihat Produk Kami</button>
    </section>
 
    <!-- <section id="sm-banner" class="section-p1">
@@ -122,15 +122,6 @@
 
 
    <section id="newsletter" class="section-p1 section-m1">
-        <div class="news">
-            <h4>Sign Up untuk Info lebih lanjut</h4>
-            <p>Masukan email anda agar dapat info dan update mengenai <span>barang terbaru</span> </p>
-        </div>
-
-        <div class="form">
-            <input type="text"placeholder="Your E-Mail" name="" id="">
-            <button class="normal">Sign Up</button>
-        </div>
    </section>
 
 

@@ -72,52 +72,32 @@
     </div>
    </section>
 
-   <section id="about-app" class="section-p1">
-    <h1>Let's See Our <a href="#">Photo</a></h1>
-    <div class="photo">
-        <img src="../img/about/anime.gif" alt="">
-    </div>
-   </section>
-
    <section id="features" class="section-p1">
-    <div class="fe-box">
-        <img src="../img/features/f1.png" alt="">
-        <h6>Mudah di akses</h6>
-    </div>
-    <div class="fe-box">
-        <img src="../img/features/f2.png" alt="">
-        <h6>Hemat waktu</h6>
-    </div>
-    <div class="fe-box">
-        <img src="../img/features/f3.png" alt="">
-        <h6>Hemat Uang</h6>
-    </div>
-    <div class="fe-box">
-        <img src="../img/features/f4.png" alt="">
-        <h6>Customer senang</h6>
-    </div>
-    <div class="fe-box">
-        <img src="../img/features/f5.png" alt="">
-        <h6>Admin senang</h6>
-    </div>
-    <div class="fe-box">
-        <img src="../img/features/f6.png" alt="">
-        <h6>24/7 Support</h6>
-    </div>
-</section>
+        <div class="fe-box">
+            <img src="../img/features/f1.png" alt="">
+            <h6>Mudah di akses</h6>
+        </div>
+        <div class="fe-box">
+            <img src="../img/features/f2.png" alt="">
+            <h6>Hemat waktu</h6>
+        </div>
+        <div class="fe-box">
+            <img src="../img/features/f4.png" alt="">
+            <h6>Customer senang</h6>
+        </div>
+        <div class="fe-box">
+            <img src="../img/features/f5.png" alt="">
+            <h6>Admin senang</h6>
+        </div>
+        <div class="fe-box">
+            <img src="../img/features/f6.png" alt="">
+            <h6>24/7 Support</h6>
+        </div>
+    </section>
 
 
 
 <section id="newsletter" class="section-p1 section-m1">
-    <div class="news">
-        <h4>Sign Up untuk Info lebih lanjut</h4>
-        <p>Masukan email anda agar dapat info dan update mengenai <span>barang terbaru</span> </p>
-    </div>
-
-    <div class="form">
-        <input type="text"placeholder="Your E-Mail" name="" id="">
-        <button class="normal">Sign Up</button>
-    </div>
 </section>
 
 

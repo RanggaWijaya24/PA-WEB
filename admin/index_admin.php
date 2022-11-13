@@ -76,7 +76,7 @@
    <section id="banner" class="section-m1">
     <h4>Memberikan service terbaik</h4>
     <h2>Diskon <span>50% </span> Semua Baju & Aksesoris di musim panas </h2>
-    <button onclick="window.location.href='shop_admin.php';" class="normal">Explore More</button>
+    <button onclick="window.location.href='shop_admin.php';" class="normal">Lihat Produk Kami</button>
    </section>
 
    <section id="banner3">

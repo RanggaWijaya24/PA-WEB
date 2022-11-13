@@ -3,7 +3,29 @@
     require '../koneksi.php';
     if(isset($_SESSION['login'])){
       if($_SESSION['Role'] === "user"){
-        //Langsung Masuk Ke Halaman Html dibawah
+        $id_akun = $_SESSION["id_akun"];
+        if(isset($_POST['kirim'])){
+            $nama = $_POST["nama"];
+            $email = $_POST["email"];
+            $subjek = $_POST["subjek"];
+            $pesan = $_POST["pesan"];
+            $tambah = mysqli_query($conn, "INSERT INTO contact VALUES('$id_akun','$nama','$email','$subjek','$pesan')");
+            if($tambah){
+                echo "
+                    <script>
+                        alert('Pesan Telah Disimpan');
+                        document.location.href = 'contact_user.php'
+                    </script>
+                ";
+            }else{
+                echo "
+                    <script>
+                        alert('Pesan Gagal Disimpan');
+                        document.location.href = 'contact_user.php'
+                    </script>
+                ";
+            }
+        }
       }else{
         header("Location: ../admin/index_admin.php");
       }
@@ -86,15 +108,15 @@
     </section>
 
     <section id="form-details">
-        <form action="">
+        <form action="" method="post">
             <span>LEAVE A MESSAGE</span>
             <h2>Saran dan Kritik adalah kunci untuk menjadi lebih baik</h2>
-            <input type="text" placeholder="Your Name">
-            <input type="text" placeholder="E-Mail">
-            <input type="text" placeholder="Subject">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message">
+            <input type="text" name="nama" placeholder="Your Name">
+            <input type="text" name="email" placeholder="E-Mail">
+            <input type="text" name="subjek" placeholder="Subject">
+            <textarea name="pesan" id="" cols="30" rows="10" placeholder="Your Message">
             </textarea>
-            <button class="normal">Submit</button>
+            <button class="normal" name="kirim">Submit</button>
         </form>
 
         <div class="people">

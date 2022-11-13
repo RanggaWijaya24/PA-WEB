@@ -63,10 +63,6 @@
             <h6>Hemat waktu</h6>
         </div>
         <div class="fe-box">
-            <img src="../img/features/f3.png" alt="">
-            <h6>Hemat Uang</h6>
-        </div>
-        <div class="fe-box">
             <img src="../img/features/f4.png" alt="">
             <h6>Customer senang</h6>
         </div>
@@ -80,266 +76,13 @@
         </div>
     </section>
 
-   <section id="product1" class="section-p1">
-        <h2>Featured Product</h2>
-        <p>Lagi trend baju modern</p>
-        <div class="pro-container">
-            <div class="pro">
-                <img src="../img/products/f1.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-            <div class="pro">
-                <img src="../img/products/f2.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-            <div class="pro">
-                <img src="../img/products/f3.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-            <div class="pro">
-                <img src="../img/products/f4.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-            <div class="pro">
-                <img src="../img/products/f5.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-            <div class="pro">
-                <img src="../img/products/f6.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-            <div class="pro">
-                <img src="../img/products/f7.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-            <div class="pro">
-                <img src="../img/products/f8.jpg" alt="">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Baju</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>Rp.78.000</h4>
-                </div>
-                <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-            </div>
-        </div>
-   </section>
-
-
    <section id="banner" class="section-m1">
     <h4>Memberikan service terbaik</h4>
-    <h2>Diskon <span>70% cuy</span> Semua Baju & Aksesoris di musim panas </h2>
-    <button class="normal">Explore More</button>
+    <h2>Diskon <span>50% cuy</span> Semua Baju & Aksesoris di musim panas </h2>
+    <button onclick="window.location.href='shop.php';" class="normal">Lihat Produk Kami</button>
    </section>
 
-   <section id="product1" class="section-p1">
-    <h2>New Arrival</h2>
-    <p>Pernah di pakai artis</p>
-    <div class="pro-container">
-        <div class="pro">
-            <img src="../img/products/n1.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-        <div class="pro">
-            <img src="../img/products/n2.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-        <div class="pro">
-            <img src="../img/products/n3.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-        <div class="pro">
-            <img src="../img/products/n4.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-        <div class="pro">
-            <img src="../img/products/n5.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-        <div class="pro">
-            <img src="../img/products/n6.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-        <div class="pro">
-            <img src="../img/products/n7.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-        <div class="pro">
-            <img src="../img/products/n8.jpg" alt="">
-            <div class="des">
-                <span>Adidas</span>
-                <h5>Cartoon Baju</h5>
-                <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h4>Rp.78.000</h4>
-            </div>
-            <a href="#"><i id="cart"  class="fa-solid fa-cart-shopping "></i></a>
-        </div>
-    </div>
-   </section>
+
 
    <!-- <section id="sm-banner" class="section-p1">
       <div class="banner-box">
@@ -358,30 +101,25 @@
 
    <section id="banner3">
         <div class="banner-box">
-            <h2>SEASON SALE</h2>
-            <h3>Baju Musim Dinfgin -50%</h3>
+            <h2>Produk Sale</h2>
+            <h3>Pakaian Kaos</h3>
         </div>
         <div class="banner-box banner-box2 ">
-            <h2>SEASON SALE</h2>
-            <h3>Baju Musim Dinfgin -50%</h3>
+            <h2>Produk Sale</h2>
+            <h3>Pakaian Kemeja</h3>
         </div>
         <div class="banner-box banner-box3">
-            <h2>SEASON SALE</h2>
-            <h3>Baju Musim Dinfgin -50%</h3>
+            <h2>Produk Sale</h2>
+            <h3>Celana</h3>
+        </div>
+        <div class="banner-box banner-box3">
+            <h2>Produk Sale</h2>
+            <h3>Sepatu</h3>
         </div>
    </section>
 
 
    <section id="newsletter" class="section-p1 section-m1">
-        <div class="news">
-            <h4>Sign Up untuk Info lebih lanjut</h4>
-            <p>Masukan email anda agar dapat info dan update mengenai <span>barang terbaru</span> </p>
-        </div>
-
-        <div class="form">
-            <input type="text"placeholder="Your E-Mail" name="" id="">
-            <button class="normal">Sign Up</button>
-        </div>
    </section>
 
 
@@ -405,17 +143,16 @@
     </div>
    
     <div class="col">
-        <h4>About</h4>
-        <a href="#">About Us</a>
-        <a href="#">Delivery Information</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms & Condition</a>
-        <a href="#">Contact Us</a>
+        <h4>Menu</h4>
+        <a href="about.php">About Us</a>
+        <a href="blog.php">Blog</a>
+        <a href="shop.php">Shop</a>
+        <a href="contact.php">Contact Us</a>
     </div>
 
     <div class="col">
         <h4>My Account</h4>
-        <a href="#">Sign In</a>
+        <a href="../login.php">Sign In</a>
         <a href="#">View Chart</a>
         <a href="#">My Whislist</a>
         <a href="#">Track My Order</a>
