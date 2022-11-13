@@ -5,11 +5,11 @@
       if($_SESSION['Role'] === "user"){
         $id = $_GET["id"];
         $id_akun = $_SESSION['id_akun'];
-        $data = mysqli_query($conn,"SELECT * FROM produk LEFT JOIN cart ON produk.Id_Produk = cart.Id_Produk WHERE produk.Id_Produk = $id AND cart.Id_Akun = $id_akun");
-        $gambar = mysqli_query($conn,"SELECT Gambar FROM produk LEFT JOIN cart ON produk.Id_Produk = cart.Id_Produk WHERE produk.Id_Produk = $id");
+        $data = mysqli_query($conn,"SELECT * FROM produk LEFT JOIN cart ON produk.Id_Produk = cart.Id_Produk WHERE produk.Id_Produk = $id");
+        $data1 = mysqli_query($conn,"SELECT * FROM produk LEFT JOIN cart ON produk.Id_Produk = cart.Id_Produk WHERE produk.Id_Produk = $id AND cart.Id_Akun = $id_akun");
         //Memeriksa Stok
         $data_tambah = mysqli_fetch_array($data);
-        $nama_gambar = mysqli_fetch_array($gambar);
+        $data_tambah2 = mysqli_fetch_array($data1);
         if($data_tambah["Sisa_Stok"] === 0){
             echo"
                 <script>
@@ -21,7 +21,11 @@
             if(isset($_POST['tambah_cart'])){
 
                 $quantity = $_POST["quantity"];
-                if($data_tambah["Id_Produk"] === NULL){
+                //Memeriksa Apakah Produk yang di tambah User sudah ada di Cart atau belum
+                //Pemeriksaan dilakukan dengan menggunakan array $data_tambah2 karena dalam query $data2 terdapat kondisi tambahan yaitu cart.Id_Akun = $id_akun
+                //Sehingga data yang diperiksa akan berdasarkan Id_Produk dan Id_Akun
+                //Hal ini dilakukan karena jika User1 dan User2 Membeli Produk yang sama, maka yang membedakan Cart nya adalah Id_Akun.
+                if($data_tambah2["Id_Produk"] === NULL){
                     $total_harga = $data_tambah["Harga"] * $quantity;
                     $tambah = mysqli_query($conn, "INSERT INTO cart VALUES($id_akun,$id,$quantity,$total_harga)");
                     $stok_terbaru = $data_tambah["Sisa_Stok"] - $quantity;
@@ -91,7 +95,7 @@
 
     <section id="prodetails" class="section-p1"> 
         <div class="single-pro-image">
-            <img src="../img/crud/<?php echo $nama_gambar["Gambar"]; ?>" width="100%" id="MainImg" alt="">
+            <img src="../img/crud/<?php echo $data_tambah["Gambar"]; ?>" width="100%" id="MainImg" alt="">
         </div>
               
         <div class="single-pro-details">
