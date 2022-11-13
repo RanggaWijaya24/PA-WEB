@@ -32,7 +32,7 @@
                     $update_stok = mysqli_query($conn, "UPDATE produk SET Sisa_Stok = $stok_terbaru WHERE Id_Produk = $id");
                 }else{
                     $tambah = mysqli_query($conn, "UPDATE cart SET Quantity = '$quantity' WHERE Id_Produk = $id AND Id_Akun = $id_akun");
-                    $stok_terbaru = $data_tambah["Sisa_Stok"] + $data_tambah["Quantity"] - $quantity;
+                    $stok_terbaru = $data_tambah2["Sisa_Stok"] + $data_tambah2["Quantity"] - $quantity;
                     $update_stok = mysqli_query($conn, "UPDATE produk SET Sisa_Stok = '$stok_terbaru' WHERE Id_Produk = '$id'");
                 }
                 if ($tambah && $update_stok){

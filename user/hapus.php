@@ -10,7 +10,7 @@
             $quantity = $hasil["Quantity"];
             $hapus = mysqli_query($conn, "DELETE FROM cart WHERE Id_Produk = '$id' AND Id_Akun = $id_akun");
             $stok_terbaru = $quantity + $hasil["Sisa_Stok"];
-            $update_stok = mysqli_query($conn, "UPDATE produk SET Sisa_Stok = $stok_terbaru WHERE Id_Produk = $id AND Id_Akun = $id_akun");
+            $update_stok = mysqli_query($conn, "UPDATE produk SET Sisa_Stok = $stok_terbaru WHERE Id_Produk = $id");
             if($hapus && $update_stok){
                 header("Location: cart_user.php?pesan=berhasil");
             }else{
