@@ -5,7 +5,7 @@
       if($_SESSION['Role'] === "user"){
         $id = $_GET["id"];
         $id_akun = $_SESSION['id_akun'];
-        $data = mysqli_query($conn,"SELECT * FROM produk LEFT JOIN cart ON produk.Id_Produk = cart.Id_Produk WHERE produk.Id_Produk = $id");
+        $data = mysqli_query($conn,"SELECT * FROM produk LEFT JOIN cart ON produk.Id_Produk = cart.Id_Produk WHERE produk.Id_Produk = $id AND Id_Produk = $id_akun");
         //Memeriksa Stok
         $data_tambah = mysqli_fetch_array($data);
         if($data_tambah["Sisa_Stok"] === 0){
