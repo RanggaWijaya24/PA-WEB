@@ -5,9 +5,11 @@
       if($_SESSION['Role'] === "user"){
         $id = $_GET["id"];
         $id_akun = $_SESSION['id_akun'];
-        $data = mysqli_query($conn,"SELECT * FROM produk LEFT JOIN cart ON produk.Id_Produk = cart.Id_Produk WHERE produk.Id_Produk = $id AND Id_Produk = $id_akun");
+        $data = mysqli_query($conn,"SELECT * FROM produk LEFT JOIN cart ON produk.Id_Produk = cart.Id_Produk WHERE produk.Id_Produk = $id AND cart.Id_Akun = $id_akun");
+        $gambar = mysqli_query($conn,"SELECT Gambar FROM produk LEFT JOIN cart ON produk.Id_Produk = cart.Id_Produk WHERE produk.Id_Produk = $id");
         //Memeriksa Stok
         $data_tambah = mysqli_fetch_array($data);
+        $nama_gambar = mysqli_fetch_array($gambar);
         if($data_tambah["Sisa_Stok"] === 0){
             echo"
                 <script>
@@ -89,7 +91,7 @@
 
     <section id="prodetails" class="section-p1"> 
         <div class="single-pro-image">
-            <img src="../img/crud/<?php echo $data_tambah["Gambar"]; ?>" width="100%" id="MainImg" alt="">
+            <img src="../img/crud/<?php echo $nama_gambar["Gambar"]; ?>" width="100%" id="MainImg" alt="">
         </div>
               
         <div class="single-pro-details">
