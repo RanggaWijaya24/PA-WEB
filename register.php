@@ -10,9 +10,9 @@
     exit;
   }
   if(isset($_POST['daftar'])){
-    $email = $_POST['email'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $email = htmlspecialchars($_POST['email']);
+    $username = htmlspecialchars($_POST['username']);
+    $password = htmlspecialchars($_POST['password']);
 
     //Enkripsi Password
     $password = password_hash($password,PASSWORD_DEFAULT);

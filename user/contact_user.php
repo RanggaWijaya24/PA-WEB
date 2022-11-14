@@ -5,10 +5,10 @@
       if($_SESSION['Role'] === "user"){
         $id_akun = $_SESSION["id_akun"];
         if(isset($_POST['kirim'])){
-            $nama = $_POST["nama"];
-            $email = $_POST["email"];
-            $subjek = $_POST["subjek"];
-            $pesan = $_POST["pesan"];
+            $nama = htmlspecialchars($_POST["nama"]);
+            $email = htmlspecialchars($_POST["email"]);
+            $subjek = htmlspecialchars($_POST["subjek"]);
+            $pesan = htmlspecialchars($_POST["pesan"]);
             $tambah = mysqli_query($conn, "INSERT INTO contact VALUES('$id_akun','$nama','$email','$subjek','$pesan')");
             if($tambah){
                 echo "

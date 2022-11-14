@@ -6,9 +6,9 @@
       $id = $_GET["id"];
       
       if(isset($_POST['update'])){
-        $nama = $_POST["nama_produk"];
-        $harga = $_POST["harga"];
-        $stok = $_POST["stok"];
+        $nama = htmlspecialchars($_POST["nama_produk"]);
+        $harga = htmlspecialchars($_POST["harga"]);
+        $stok = htmlspecialchars($_POST["stok"]);
         $gambar = $_FILES["gambar_produk"]["name"];
 
         $jenis_file = array('png','jpg','jpeg');

@@ -4,9 +4,9 @@
     if(isset($_SESSION['login'])){
       if($_SESSION['Role'] === "admin"){
         if(isset($_POST['tambah'])){
-          $nama = $_POST["nama_produk"];
-          $harga = $_POST["harga"];
-          $stok = $_POST["stok"];
+          $nama = htmlspecialchars($_POST["nama_produk"]);
+          $harga = htmlspecialchars($_POST["harga"]);
+          $stok = htmlspecialchars($_POST["stok"]);
           $gambar = $_FILES["gambar_produk"]["name"];
           $jenis_file = array('png','jpg','jpeg');
           $memisahkan_ekstensi = explode('.', $gambar);

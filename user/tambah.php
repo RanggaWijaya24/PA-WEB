@@ -20,7 +20,7 @@
         }else{
             if(isset($_POST['tambah_cart'])){
 
-                $quantity = $_POST["quantity"];
+                $quantity = htmlspecialchars($_POST["quantity"]);
                 //Memeriksa Apakah Produk yang di tambah User sudah ada di Cart atau belum
                 //Pemeriksaan dilakukan dengan menggunakan array $data_tambah2 karena dalam query $data2 terdapat kondisi tambahan yaitu cart.Id_Akun = $id_akun
                 //Sehingga data yang diperiksa akan berdasarkan Id_Produk dan Id_Akun
