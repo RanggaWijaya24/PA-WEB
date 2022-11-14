@@ -175,20 +175,19 @@
    
     <div class="col">
         <h4>About</h4>
-        <a href="#">About Us</a>
+        <a href="about_user.php">About Us</a>
         <a href="#">Delivery Information</a>
         <a href="#">Privacy Policy</a>
         <a href="#">Terms & Condition</a>
-        <a href="#">Contact Us</a>
+        <a href="contact_user.php">Contact Us</a>
     </div>
 
     <div class="col">
         <h4>My Account</h4>
-        <a href="#">Sign In</a>
-        <a href="#">View Chart</a>
-        <a href="#">My Whislist</a>
-        <a href="#">Track My Order</a>
-        <a href="#">Help</a>
+        <a href="../logout.php">Sign Out</a>
+        <a href="cart_user.php">View Cart</a>
+        <a href="shop_user.php">Track My Order</a>
+        <a href="contact_user.php">Help</a>
     </div>
 
    <div class="col install">

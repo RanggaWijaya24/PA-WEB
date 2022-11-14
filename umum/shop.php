@@ -150,8 +150,8 @@
         <a href="../login.php">Sign In</a>
         <a href="#">View Chart</a>
         <a href="#">My Whislist</a>
-        <a href="#">Track My Order</a>
-        <a href="#">Help</a>
+        <a href="shop.php">Track My Order</a>
+        <a href="contact.php">Help</a>
     </div>
 
    <div class="col install">

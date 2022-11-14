@@ -155,9 +155,10 @@
 
     <div class="col">
         <h4>My Account</h4>
+        <a href="../logout.php">Sign Out</a>
         <a href="cart_user.php">View Cart</a>
-        <a href="#">Track My Order</a>
-        <a href="#">Help</a>
+        <a href="shop_user.php">Track My Order</a>
+        <a href="contact_user.php">Help</a>
     </div>
 
    <div class="col install">

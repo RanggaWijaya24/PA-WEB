@@ -133,11 +133,9 @@
 
     <div class="col">
         <h4>My Account</h4>
-        <a href="#">Sign In</a>
-        <a href="#">View Chart</a>
-        <a href="#">My Whislist</a>
-        <a href="#">Track My Order</a>
-        <a href="#">Help</a>
+        <a href="../logout.php">Sign Out</a>
+        <a href="admin.php">View Cart</a>
+        <a href="shop_admin.php">Track My Order</a>
     </div>
 
    <div class="col install">
