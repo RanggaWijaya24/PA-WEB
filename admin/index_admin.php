@@ -40,7 +40,7 @@
         </div>
         <div id="mobile">
             <img src="../img/menu.png" alt="" class="bar" width="25px" height="25px">
-            <a href="#" ><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="admin.php" ><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
     </section>
 
