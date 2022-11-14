@@ -33,8 +33,9 @@
                <div class="navigation">
                 <li><a class="active"href="index_admin.php">Home</a></li>
                 <li><a href="shop_admin.php">Shop</a></li>
+                <li><a href="../logout.php">Logout</li>
                 <li id="bg-lg"><a href="admin.php"><i class="fa-solid fa-cart-shopping"></i></a></li> 
-                <li id="bg-lg"><a href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li> 
+                <!-- <li id="bg-lg"><a href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>  -->
                </div>
             </ul>
         </div>

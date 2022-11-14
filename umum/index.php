@@ -112,10 +112,10 @@
             <h2>Produk Sale</h2>
             <h3>Celana</h3>
         </div>
-        <div class="banner-box banner-box3">
+        <!-- <div class="banner-box banner-box3">
             <h2>Produk Sale</h2>
             <h3>Sepatu</h3>
-        </div>
+        </div> -->
    </section>
 
 

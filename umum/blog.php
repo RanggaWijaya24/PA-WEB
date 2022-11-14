@@ -140,13 +140,13 @@
 
    <section id="newsletter" class="section-p1 section-m1">
         <div class="news">
-            <h4>Sign Up untuk Info lebih lanjut</h4>
-            <p>Masukan email anda agar dapat info dan update mengenai <span>barang terbaru</span> </p>
+            <!-- <h4>Sign Up untuk Info lebih lanjut</h4>
+            <p>Masukan email anda agar dapat info dan update mengenai <span>barang terbaru</span> </p> -->
         </div>
 
         <div class="form">
-            <input type="text"placeholder="Your E-Mail" name="" id="">
-            <button class="normal">Sign Up</button>
+            <!-- <input type="text"placeholder="Your E-Mail" name="" id="">
+            <button class="normal">Sign Up</button> -->
         </div>
    </section>
 

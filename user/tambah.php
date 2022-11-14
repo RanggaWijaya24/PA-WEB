@@ -82,8 +82,9 @@
                 <li><a href="blog_user.php">Blog</a></li>
                 <li><a href="about_user.php">About</a></li>
                 <li><a href="contact_user.php">Contact</a></li>
+                <li><a href="../logout.php">Logout</li>
                 <li id="bg-lg"><a href="cart_user.php"><i class="fa-solid fa-cart-shopping"></i></a></li> 
-                <li id="bg-lg"><a href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li> 
+                <!-- <li id="bg-lg"><a href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>  -->
                </div>
             </ul>
         </div>
@@ -183,7 +184,8 @@
    </footer>
 
 <!-- JS untuk bisa pindah-pindah click baju -->
-   <script>
+
+   <!-- <script>
      var MainImg  = document.getElementById("MainImg");
      var smallimg = document.getElementsByClassName("small-img");
 
@@ -199,7 +201,7 @@
      smallimg[3].onclick = function(){
         MainImg.src = smallimg[3].src;
      }
-   </script>
+   </script> -->
 
 
     <script src="../js/script.js"></script>

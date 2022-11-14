@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
     <link rel="icon" href="../img/CUYLOGO-removebg-preview.ico">
+    <script src="../js/script.js"></script>
     <title>Admin Thrift Store</title>
 </head>
 <body>
@@ -36,8 +37,9 @@
                <div class="navigation">
                 <li><a href="index_admin.php">Home</a></li>
                 <li><a href="shop_admin.php">Shop</a></li>
+                <li><a href="../logout.php">Logout</li>
                 <li id="bg-lg"><a href="admin.php"><i class="fa-solid fa-cart-shopping"></i></a></li> 
-                <li id="bg-lg"><a href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li> 
+                <!-- <li id="bg-lg"><a href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>  -->
                </div>
             </ul>
         </div>
@@ -57,7 +59,7 @@
                 </form>
             </div>
         </div>
-        <div class="table-section">
+        <div class="table-section" >
             <table>
                 <thead>
                     <tr>
@@ -111,5 +113,6 @@
             <div><i class="fa-solid fa-arrow-right-long"></i></div>
         </div>
     </div>
+    <script src="../js/script.js"></script>
 </body>
 </html>

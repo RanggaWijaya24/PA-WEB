@@ -76,11 +76,11 @@
           </div>
         <div>
           <label>Harga </label>
-         <input type="text" name="harga" required/>
+         <input type="number" min="0" name="harga" required/>
         </div>
         <div>
           <label>Stok</label>
-         <input type="text" name="stok" required/>
+         <input type="number"min="1" name="stok" required/>
         </div>
        
         <div>

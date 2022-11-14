@@ -78,25 +78,25 @@
     <section id="contact-details" class="section-p1">
         <div class="details">
             <span>GET IT</span>
-            <h2>visit tempat</h2>
-            <h3>head office</h3>
+            <h2>Kunjungi Toko Utama kami di jalan perjuangan</h2>
+            <h3>Toko Utama</h3>
      
         <div>
             <li>
                 <i class="fa-solid fa-map"></i>
-                <p>jalan perjuangan</p>
+                <p>Jl.Perjuangan Samarinda </p>
             </li>
             <li>
                 <i class="far fa-envelope"></i>
-                <p>jalan perjuangan</p>
+                <p>cuythriftstore@gmail.com</p>
             </li>
             <li>
                 <i class="fas fa-phone-alt"></i>
-                <p>jalan perjuangan</p>
+                <p>+629999999</p>
             </li>
             <li>
                 <i class="far fa-clock"></i>
-                <p>jalan perjuangan</p>
+                <p>09.00-22.00</p>
             </li>
         </div>
     </div>

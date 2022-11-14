@@ -83,11 +83,11 @@
           </div>
         <div>
           <label>Harga </label>
-         <input type="text" name="harga" value="" required/>
+         <input type="number" min="0" name="harga" value="" required/>
         </div>
         <div>
           <label>Stok</label>
-         <input type="text" name="stok" value="" required/>
+         <input type="number" min="1" name="stok" value="" required/>
         </div>
        
         <div>

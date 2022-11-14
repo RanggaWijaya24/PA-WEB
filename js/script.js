@@ -5,10 +5,10 @@ function myNav(){
     bar.onclick = ()=>{
         if(nav.style.left == "0%"){
             nav.style.left = "-100%";
-            bar.src = "img/menu.png"
+            bar.src = "..img/menu.png"
         }else{
             nav.style.left = "0%";
-            bar.src = "img/x.png"
+            bar.src = "../img/x.png"
         }
     }
 }
